@@ -17,12 +17,6 @@
 		]]>
 	</update>
 	
-	<delete id="deleteBoard">
-		<![CDATA[
-			DELETE FROM BOARD WHERE SEQ=#{seq}
-		]]>
-	</delete>
-	
 	<select id="getBoard" resultType="board">
 		<![CDATA[
 			SELECT * FROM BOARD WHERE SEQ=#{seq}
@@ -41,4 +35,64 @@
 		</if>
 		ORDER BY SEQ DESC		
 	</select>
+	
+	<!-- 이후 위에 삭제 -->
+	
+	
+	<insert id="insertMboard" parameterType="board">
+		<![CDATA[
+			INSERT INTO BOARD(CATE, WRITERID, CONTENT)
+			VALUES(#{cate}, #{writerid}, #{content})
+		]]>
+	</insert>
+	
+	<select id="getMboardList" resultType="board">
+		SELECT * 
+		FROM BOARD
+		WHERE CATE='m'
+		ORDER BY SEQ DESC		
+	</select>
+	
+	<insert id="insertSboard" parameterType="board">
+		<![CDATA[
+			INSERT INTO BOARD(CATE, WRITERID, CONTENT)
+			VALUES(#{cate}, #{writerid}, #{content})
+		]]>
+	</insert>
+	
+	<select id="getSboardList" resultType="board">
+		SELECT * 
+		FROM BOARD
+		WHERE CATE='s'
+		ORDER BY SEQ DESC		
+	</select>
+	
+	<delete id="deleteMboard">
+	<![CDATA[
+		DELETE FROM BOARD WHERE SEQ=#{seq}
+	]]>
+	</delete>
+	
+	<delete id="deleteSboard">
+	<![CDATA[
+		DELETE FROM BOARD WHERE SEQ=#{seq}
+	]]>
+	</delete>
+	
+	<select id="searchMboardList" resultType="board" parameterType="java.util.Map">
+    	SELECT * 
+    	FROM BOARD
+    	WHERE CONTENT LIKE CONCAT ('%', #{search}, '%')
+    	AND CATE="m"
+    	ORDER BY SEQ DESC
+	</select>
+	
+	<select id="searchSboardList" resultType="board" parameterType="java.util.Map">
+    	SELECT * 
+    	FROM BOARD
+    	WHERE CONTENT LIKE CONCAT ('%', #{search}, '%')
+    	AND CATE="s"
+    	ORDER BY SEQ DESC
+	</select>
+	
 </mapper>

@@ -1,11 +1,12 @@
 package com.guam.biz.user;
 
-// VO(Value Object)
 public class UserVO {
 	private String id;
 	private String password;
 	private String name;
-	private String role;
+	private String company;
+	private String github;
+	
 	public String getId() {
 		return id;
 	}
@@ -24,14 +25,20 @@ public class UserVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getRole() {
-		return role;
+	public String getCompany() {
+		return company;
 	}
-	public void setRole(String role) {
-		this.role = role;
+	public void setCompany(String company) {
+		this.company = company;
+	}
+	public String getGithub() {
+		return github;
+	}
+	public void setGithub(String github) {
+		this.github = github;
 	}
 	@Override
 	public String toString() {
-		return "UserVO [id=" + id + ", password=" + password + ", name=" + name + ", role=" + role + "]";
+		return "UserVO [id=" + id + ", password=" + password + ", name=" + name + ", company=" + company + ", github=" + github + "]";
 	}
 }

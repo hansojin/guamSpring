@@ -3,6 +3,7 @@ package com.guam.biz.user.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.guam.biz.board.BoardVO;
 import com.guam.biz.user.UserVO;
 
 @Service("userService")
@@ -29,6 +30,26 @@ public class UserServiceImpl implements UserService{
 		int num = userDAO.memberCount(vo);
 		System.out.println("회원수 " + num);
 		
+	}
+	
+	@Override
+	public void insertMember(UserVO vo) {
+		userDAO.insertMember(vo);		
+	}
+	
+	@Override
+	public void updateMember(UserVO vo) {
+		userDAO.updateMember(vo);
+	}
+	
+	@Override
+	public UserVO getUserInfo(UserVO vo) {
+		return userDAO.getUserInfo(vo);
+	}
+	
+	@Override
+	public void deleteUser(UserVO vo) {
+		userDAO.deleteUser(vo);
 	}
 	
 	

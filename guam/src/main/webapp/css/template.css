@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'NanumSquareNeo-Variable';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'NanumSquareNeo-Variable';
+	margin: 10 auto;
+	max-width: 1200px;
+	line-height: 1.5;
+}
+#idCheckMsg{
+	font-family: 'NanumSquareNeo-Variable';
+	font-size:0.8em;
+}
+
+
+#formBtn {
+	width: 280px;
+	padding: 10px;
+	background-color: #26469B;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	fontSize: 16px;
+	cursor: pointer;
+}
+
+.formCss {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	border: 1px 
+}
+
+.loginForm form {
+	text-align: left;
+}

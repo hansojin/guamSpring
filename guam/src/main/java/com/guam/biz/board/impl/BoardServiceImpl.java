@@ -23,10 +23,7 @@ public class BoardServiceImpl implements BoardService{
 		boardDAO.updateBoard(vo);
 	}
 
-	@Override
-	public void deleteBoard(BoardVO vo) {
-		boardDAO.deleteBoard(vo);
-	}
+
 
 	@Override
 	public BoardVO getBoard(BoardVO vo) {
@@ -38,4 +35,46 @@ public class BoardServiceImpl implements BoardService{
 		return boardDAO.getBoardList(vo);
 	}
 
+	///////////////// 위에는 이후 삭제 ///////////////////
+	
+	@Override
+	public void insertMboard(BoardVO vo) {
+		boardDAO.insertMboard(vo);
+	}
+	
+	@Override
+	public List<BoardVO> getMboardList(BoardVO vo) {
+		return boardDAO.getMboardList(vo);
+	}
+	
+	@Override
+	public void insertSboard(BoardVO vo) {
+		boardDAO.insertSboard(vo);
+	}
+	
+	@Override
+	public List<BoardVO> getSboardList(BoardVO vo) {
+		return boardDAO.getSboardList(vo);
+	}
+
+	@Override
+	public void deleteMboard(BoardVO vo) {
+		boardDAO.deleteMboard(vo);
+	}
+	
+	@Override
+	public void deleteSboard(BoardVO vo) {
+		boardDAO.deleteSboard(vo);
+	}
+	
+	@Override
+	public List<BoardVO> searchMboardList(String search) {
+		return boardDAO.searchMboardList(search);
+	}
+	
+	@Override
+	public List<BoardVO> searchSboardList(String search) {
+		return boardDAO.searchSboardList(search);
+	}
+	
 }

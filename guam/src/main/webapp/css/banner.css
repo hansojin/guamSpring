@@ -1,0 +1,40 @@
+@font-face {
+	font-family: 'GoryeongStrawberry';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/GoryeongStrawberry.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DNFBitBitv2';
+	font-style: normal;
+	font-weight: 400;
+	src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')
+		format('opentype')
+}
+
+.navbar-nav .nav-item a{
+	margin-left: 40px;
+	margin-top: 5px;
+	font-family: 'DNFBitBitv2', sans-serif;
+	font-size: 1.3em;
+}
+
+.navbar-brand {
+	font-size: 1.2em;
+}
+
+#logo{
+	font-family: 'GoryeongStrawberry'; 
+	font-size: 2.3em; 
+	color: #26469B;
+}
+
+
+.banner{
+	margin: 0; 
+    max-width: none;
+}
+

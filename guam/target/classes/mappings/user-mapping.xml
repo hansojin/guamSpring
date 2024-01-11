@@ -19,5 +19,29 @@
 			SELECT COUNT(*) FROM USERS
 		]]>	
 	</select>
+	
+	<insert id="insertMember" parameterType="user">
+		<![CDATA[
+			INSERT INTO USERS(ID, PASSWORD, NAME, COMPANY, GITHUB)
+			VALUES(#{id}, #{password}, #{name} , #{company}, #{github})
+		]]>
+	</insert>
+	
+	<update id="updateMember" >
+		<![CDATA[
+			UPDATE USERS SET PASSWORD=#{password}, NAME=#{name},COMPANY=#{company}, GITHUB=#{github} WHERE ID=#{id}
+		]]>
+	</update>
 
+	<select id="getUserInfo" resultType="user">
+		<![CDATA[
+			SELECT * FROM USERS WHERE ID=#{id}
+		]]>	
+	</select>
+	
+	<delete id="deleteUser">
+		<![CDATA[
+			DELETE FROM USERS WHERE ID=#{id}
+		]]>
+	</delete>
 </mapper>
