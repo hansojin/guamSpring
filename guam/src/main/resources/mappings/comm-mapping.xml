@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CommDAO">
+
+	<insert id="insertComm" parameterType="comm">
+		<![CDATA[
+			INSERT INTO COMM(CATE, TITLE, CONTENT, WRITERID)
+			VALUES(#{cate}, #{title}, #{content} , #{writerid})
+		]]>
+	</insert>
+	
+
+	<select id="communityList" resultType="comm">
+		SELECT * 
+		FROM COMM
+		WHERE 1=1
+    	<if test="cate">
+        	AND CATE = #{cate}
+    	</if>
+		ORDER BY SEQ DESC		
+	</select>
+	
+	<select id="communityPost" resultType="comm">
+		SELECT * 
+		FROM COMM
+		WHERE SEQ=#{seq}	
+	</select>
+	
+	<update id="viewAddOne">
+    	UPDATE COMM
+    	SET VIEW = VIEW + 1
+    	WHERE SEQ = #{seq}
+	</update>
+
+
+	<insert id="addComment" parameterType="commReply">
+		<![CDATA[
+ 			INSERT INTO COMMREPLY(COMMSEQ, WRITERID, CONTENT) 
+ 			VALUES(#{commseq}, #{writerid} , #{content}) 
+ 		]]> 
+	</insert>
+	
+	<update id="addCommentCnt" parameterType="comm">
+    	UPDATE COMM
+    	SET REPLY = REPLY + 1
+    	WHERE SEQ = #{seq}
+	</update>
+
+	
+
+	
+	
+</mapper>

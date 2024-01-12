@@ -27,7 +27,7 @@ function navigateTo(url) {
 	<img src="img/sub1.PNG" alt="모집" onclick="navigateTo('getMboardList.do')" class="image-link"><br>
     <img src="img/sub2.PNG" alt="신청" onclick="navigateTo('getSboardList.do')" class="image-link"><br>
     <img src="img/sub3.PNG" alt="스터디" onclick="navigateTo('memberRegister.jsp')" class="image-link"><br>
-    <img src="img/sub4.PNG" alt="커뮤니티" onclick="navigateTo('memberRegister.jsp')" class="image-link"><br>
+    <img src="img/sub4.PNG" alt="커뮤니티" onclick="navigateTo('communityList.do')" class="image-link"><br>
 	
 	<%@ include file="footer.jsp" %>
 </body>

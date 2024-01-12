@@ -67,7 +67,7 @@
             <p style='text-align: center'>INFO</p>
             <p>이름<span>${user.name}</span>
             <p>소속<span>${user.company}</span></p>
-            <p>깃헙<span style="cursor:pointer;" onclick="toGit('github.com/hansojin')">${user.github}</span></p>
+            <p>깃헙<span style="cursor:pointer;" onclick="toGit('${user.github}')">${user.github}</span></p>
             <a href="updateInfo.do?id=${sessionScope.id}" style="text-decoration:none;">
                 <p style="margin-right:20px; margin-top:30px; font-size:0.9em; color:gray; text-align:right;">수정하기</p>
             </a>

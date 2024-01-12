@@ -40,7 +40,7 @@
 						<a class="nav-link" href="/Study">스터디</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/Community">커뮤니티</a>
+						<a class="nav-link" href="communityList.do">커뮤니티</a>
 					</li>
 					<li class="nav-item">
 						<c:choose>

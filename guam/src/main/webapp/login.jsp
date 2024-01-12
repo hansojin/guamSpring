@@ -7,7 +7,12 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 <link rel="stylesheet" type="text/css" href="css/template.css">
-
+<c:if test="${sessionScope.loginError == true}">
+	<script>
+		alert('잘못된 정보입니다.');
+		<c:remove var="loginError" scope="session" />
+	</script>
+</c:if>
 </head>
 <body>
 	<div class='formCss'>

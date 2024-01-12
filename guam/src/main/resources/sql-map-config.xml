@@ -7,11 +7,14 @@
 	<typeAliases>
 		<typeAlias type="com.guam.biz.board.BoardVO" alias="board"></typeAlias>
 		<typeAlias type="com.guam.biz.user.UserVO" alias="user"></typeAlias>
+		<typeAlias type="com.guam.biz.comm.CommVO" alias="comm"></typeAlias>
+		<typeAlias type="com.guam.biz.comm.CommReplyVO" alias="commReply"></typeAlias>
 	</typeAliases>
 
 	<!-- Sql Mapper 설정  -->
 	<mappers>
 		<mapper resource="mappings/board-mapping.xml" />
 		<mapper resource="mappings/user-mapping.xml" />
+		<mapper resource="mappings/comm-mapping.xml" />
 	</mappers>
 </configuration>

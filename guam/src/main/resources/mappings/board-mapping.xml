@@ -4,25 +4,6 @@
 
 <mapper namespace="BoardDAO">
 
-	<insert id="insertBoard" parameterType="board">
-		<![CDATA[
-			INSERT INTO BOARD(TITLE, WRITER, CONTENT)
-			VALUES(#{title}, #{writer}, #{content})
-		]]>
-	</insert>
-	
-	<update id="updateBoard" >
-		<![CDATA[
-			UPDATE BOARD SET TITLE=#{title}, CONTENT=#{content} WHERE SEQ=#{seq}
-		]]>
-	</update>
-	
-	<select id="getBoard" resultType="board">
-		<![CDATA[
-			SELECT * FROM BOARD WHERE SEQ=#{seq}
-		]]>	
-	</select>
-
 	<select id="getBoardList" resultType="board">
 		SELECT * 
 		FROM BOARD

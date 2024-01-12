@@ -1,6 +1,5 @@
 package com.guam.biz.user.impl;
 
-import com.guam.biz.board.BoardVO;
 import com.guam.biz.user.UserVO;
 
 public interface UserService {

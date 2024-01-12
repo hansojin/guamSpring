@@ -15,20 +15,19 @@
 	width: 140px;
 	padding: 10px;
 	color: #26469B;
-	border: 1px solid #26469B;
 	background-color : white;
-	border-radius: 4px;
-	fontSize: 16px;
-	cursor: pointer;
+	font-size: 25px;
 	text-align: center;
 	font-weight: bold;
-	margin-left: 80px;
+	margin-left: 55px;
 }
+
 </style> 
 </head>
 <body>
     <div>
-		<br><br><div id='titleDiv'>모집 글</div>
+    	<br><br><div style="margin-left: 85px;font-size: 1.2em"><b><c:out value="${param.search}" /></b>&nbsp;을/를 포함한 검색 결과</div>
+		<br><div id='titleDiv'>모집 글</div>
 		<hr style="margin-left: 80px; width: 80%;">
         <c:forEach items="${MboardList}" var="Mboard">
         	<div style="width:80%; margin-left: 100px" id='md_content_${Mboard.seq}'></div>
@@ -66,6 +65,9 @@
 	        	var parsedHtml = parseMd(mdContent); 
 	        	document.getElementById('md_content_${Sboard.seq}').innerHTML = parsedHtml;
     		</c:forEach>
+    		console.log(${searchValue})
+    		console.log('hi')
+    		console.log(${search})
         </script>
 
     </div>

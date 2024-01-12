@@ -31,8 +31,10 @@ public class UserController {
 		if (user != null) {
 			session.setAttribute("id", user.getId());
 			return "index.jsp";
-		} else
+		} else {
+			session.setAttribute("loginError", true);
 			return "login.jsp";
+		}
 	}
 
 	@RequestMapping("/logout.do")

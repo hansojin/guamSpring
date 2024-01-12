@@ -9,11 +9,13 @@
 			SELECT * FROM USERS WHERE ID=#{id} AND PASSWORD=#{password}
 		]]>	
 	</select>
+	
 	<select id="idCheck" resultType="user">
 		<![CDATA[
 			SELECT * FROM USERS WHERE ID=#{id}
 		]]>	
 	</select>
+	
 	<select id="memberCount" resultType="int">
 		<![CDATA[
 			SELECT COUNT(*) FROM USERS
