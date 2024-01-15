@@ -27,7 +27,7 @@
     	<br><br><button id="toggleBtn">글 작성하기</button><br>
 
 		<div id="toggleDiv" style="display: none; margin-left:250px;" >
-			<hr style="width: 670px" />
+			<hr style="width: 880px; margin-left:-80px" /><br>
 			<b style="color: #8B8DB9; text-decoration: underline; font-size: 1.2em">글 작성하기</b><br><br>
 			<form action="insertComm.do" method="post">
 				<b>분&nbsp;류&nbsp;&nbsp;</b> 
@@ -43,7 +43,7 @@
 				<input type="hidden" name="writerid" value="${sessionScope.id}" />
 				<input type="submit" value="작성하기" id="submitButton" style="margin-left:250px"/>
 			</form>
-			<hr style="width: 670px" />
+			<hr style="width: 880px; margin-left:-80px" />
 		</div>
 		
 		<div style="display: flex; flex-direction: column; align-items: center; padding-top: 10px;">
@@ -57,7 +57,7 @@
 		
 		<div style="display: flex; flex-wrap: wrap;">
 		<c:forEach items="${commList}" var="comm">
-            <div id="post_${comm.seq}" onclick="redirectToPost(${comm.seq})" style="margin-left: 90px;width :25%; border-radius:20px;
+            <div id="post_${comm.seq}" onclick="redirectToPost(${comm.seq})" style="margin-left: 70px;width :25%; border-radius:20px;
             border:1px solid #AAAABC; padding:15px; margin-bottom:20px">
                 <c:choose>
                     <c:when test="${comm.cate eq 'free'}"><p style="color:#C17BB6"><b>자유</b></p></c:when>
@@ -70,10 +70,7 @@
                 <p>👁️${comm.view} &nbsp;💬${comm.reply}</p>
             </div>	
     	</c:forEach>
-		</div>
-
-
-		
+		</div><br>
 		<p style='text-align: center'>&copy; 2024 GUAM</p>
     </div>
     

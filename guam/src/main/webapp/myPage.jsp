@@ -10,7 +10,7 @@
 <style>
         .MyPageContent {
             margin: 25px auto;
-            width: 80%;
+            width: 75%;
         }
 
         .Info {
@@ -38,9 +38,10 @@
 
         .Track {
             width: 66%;
-            margin-left: 38%;
-            margin-top: 50px;
+            margin-left: 45%;
+            margin-top: 80px;
             min-height: 650px;
+            
         }
 
         .Track p {
@@ -58,10 +59,16 @@
         #dialog{
         	display:none;
         }
+        .Track a{
+        	margin-left:20px;
+        }
+        .Track > p + a{
+        	margin-left:60px;
+        }
     </style>
 </head>
 <body>
-	<div class='mrgnlft'>	
+	
 	<div class='MyPageContent'>
         <div class='Info'>
             <p style='text-align: center'>INFO</p>
@@ -78,25 +85,31 @@
                 <button onclick="window.location.href='resign.do?id=${user.id}'">탈퇴하기</button>
                 
             </div>
+        
         </div>
         <div class='Track'>
-            <p>
-                <span style="margin-right:10px; color:gray;">🔍</span>작성한 글
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima eaque atque tenetur error nostrum ipsum, vel harum blanditiis expedita optio nemo exercitationem distinctio beatae ullam omnis est libero natus illum. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet possimus cupiditate, provident veritatis eius iusto hic, vitae error asperiores quidem accusamus, voluptate inventore porro. Laudantium cumque nesciunt atque perspiciatis quae?
-            </p>
-            <br />
-            <p>
-                <span style="margin-right:10px; color:gray;">📚</span>참여한 스터디
-            </p>
-            <p>
-                <!-- 스터디 참여하기 목록 가져오기 -->
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima eaque atque tenetur error nostrum ipsum, vel harum blanditiis expedita optio nemo exercitationem distinctio beatae ullam omnis est libero natus illum. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet possimus cupiditate, provident veritatis eius iusto hic, vitae error asperiores quidem accusamus, voluptate inventore porro. Laudantium cumque nesciunt atque perspiciatis quae?
-            </p>
-        </div>
-    </div>
+            <p><span style="margin-right:10px; color:gray;">🔍</span>내가 작성한 GUAM 🔎</p>
+            <hr style='width:70%; margin-left:-20px;'>
+<%--             <a href="myMList.do?writerid=${sessionScope.id}">내가 쓴 모집글 보러가기</a> --%>
+            <a href="communityList.do">📑 내가 모집한 GUAM 보러가기</a><br><br>
+            <a href="communityList.do">📑 내가 신청한 GUAM 보러가기</a><br><br>
+            <hr style='width:70%; margin-left:-20px;'><br><br/>
+            
+            
+            
+            <p><span style="margin-right:10px; color:gray;">🔍</span>내 GUAM 활동 🔎</p>
+            <hr style='width:70%; margin-left:-20px;'>
+            <p style='margin-left:20px'> 📍 스터디 </p>
+            <a href="communityList.do">📑 내가 작성한 스터디 보러가기</a><br><br>
+            <p style='margin-left:20px'> 📍 커뮤니티 </p>
+            <a href="communityList.do">📑 내가 작성한 커뮤니티 글 보러가기</a><br><br>
+            <a href="communityList.do" style='margin-left:60px;'>📑 내가 작성한 댓글이 포함된 글 보러가기</a><br><br>
+            <hr style='width:70%; margin-left:-20px;'>
+	
+		</div>
+		<br><br><br><p style='text-align: center'>&copy; 2024 GUAM</p>
 	</div>
+
 </body>
 </html>
 <script>

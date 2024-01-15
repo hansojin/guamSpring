@@ -12,11 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.guam.biz.board.BoardVO;
 import com.guam.biz.comm.CommReplyVO;
 import com.guam.biz.comm.CommVO;
 import com.guam.biz.comm.impl.CommService;
-import com.guam.biz.user.UserVO;
 
 @Controller
 public class CommController {
@@ -42,10 +40,11 @@ public class CommController {
 	
 	// 글 상세 정보
 	@RequestMapping("/communityPost.do")
-	public String communityPost(CommVO vo, Model model) {
+	public String communityPost(CommVO vo, CommReplyVO vor, Model model) {
 		System.out.println("글 상세 조회 처리");
-		model.addAttribute("commList", commService.communityPost(vo));			// Model 정보 저장
-		return "communityPost.jsp";												// View 이름 리턴
+		model.addAttribute("commList", commService.communityPost(vo));			
+		model.addAttribute("commentList", commService.communityPostComment(vor));
+		return "communityPost.jsp";												
 	}	
 	
 	// 댓글 등록
@@ -54,7 +53,7 @@ public class CommController {
 		System.out.println("커뮤니티 댓글 처리");
 		commService.addComment(vo);
 
-		return "addCommentCnt.do?seq="+vo.getCommseq();
+		return "addCommentCnt.do?seq="+vo.getSeq();
 	}
 	// 댓글 카운트 증가 
 	@RequestMapping("/addCommentCnt.do")
@@ -64,9 +63,38 @@ public class CommController {
 		return "redirect:/communityPost.do?seq="+seq;
 	}
 	
+	// 댓글 삭제 
+	@RequestMapping("/deleteComment.do")
+	public String deleteMboard(HttpServletRequest request) {
+		System.out.println("커뮤니티 댓글 삭제 처리");
+		int seq = Integer.parseInt(request.getParameter("seq"));
+		int idx = Integer.parseInt(request.getParameter("idx"));
+		commService.deleteComment(idx,seq);
+		return "redirect:/communityPost.do?seq="+seq;
+	}
 
+	// 글 삭제
+	@RequestMapping("/deletePost.do")
+	public String deletePost(CommVO vo) {
+		System.out.println("커뮤니티 글 등록 처리");
+		commService.deletePost(vo);
+		return "communityList.do";
+	}	
 	
-	
-	
+	// 글 수정 페이지 이동
+	@RequestMapping("/toEdit.do")
+	public String communityPost(CommVO vo, Model model) {
+		System.out.println("글 상세 조회 처리");
+		model.addAttribute("commList", commService.communityPost(vo));			
+		return "communityPostEdit.jsp";												
+	}		
+
+	// 글 수정 
+	@RequestMapping("/editPost.do")
+	public String editPost(CommVO vo) {
+		System.out.println("커뮤니티 글 update 처리");
+		commService.editPost(vo);
+		return "redirect:/communityPost.do?seq="+vo.getSeq();
+	}	
 	
 }

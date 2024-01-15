@@ -15,28 +15,6 @@ public class BoardDAOMybatis{
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
-	public void insertBoard(BoardVO vo) {
-		System.out.println("===> Mybatis로 insertBoard() 기능 처리");
-		mybatis.insert("BoardDAO.insertBoard", vo);
-	}
-	
-	public void updateBoard(BoardVO vo) {
-		System.out.println("===> Mybatis로 updateBoard() 기능 처리");
-		mybatis.update("BoardDAO.updateBoard", vo);
-	}
-	
-	public BoardVO getBoard(BoardVO vo) {
-		System.out.println("===> Mybatis로 getBoard() 기능 처리");
-		return mybatis.selectOne("BoardDAO.getBoard", vo);	
-	}
-	
-	public List<BoardVO> getBoardList(BoardVO vo) {
-		System.out.println("===> Mybatis로 getBoardList() 기능 처리");
-		return mybatis.selectList("BoardDAO.getBoardList", vo);	
-	}
-	
-	///////////////// 위에는 이후 삭제 ///////////////////
-	
 	public void insertMboard(BoardVO vo) {
 		System.out.println("===> Mybatis로 insertMboard() 기능 처리");
 		mybatis.insert("BoardDAO.insertMboard", vo);

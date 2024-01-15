@@ -3,23 +3,24 @@ package com.guam.biz.comm;
 import java.util.Date;
 
 public class CommReplyVO {
+	private int idx;
 	private int seq;
-	private int commseq;
 	private String writerid;
 	private String content;
 	private Date regDate;
 	
+
+	public int getIdx() {
+		return idx;
+	}
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
 	public int getSeq() {
 		return seq;
 	}
 	public void setSeq(int seq) {
 		this.seq = seq;
-	}
-	public int getCommseq() {
-		return commseq;
-	}
-	public void setCommseq(int commseq) {
-		this.commseq = commseq;
 	}
 	public String getContent() {
 		return content;
@@ -43,7 +44,7 @@ public class CommReplyVO {
 	
 	@Override
 	public String toString() {
-		return "CommReplyVO [seq=" + seq + ", commseq=" + commseq + ",writerid=" + writerid + ", "
+		return "CommReplyVO [idx=" + idx + ", seq=" + seq + ",writerid=" + writerid + ", "
 				+ "content=" + content + ", regDate=" + regDate + "]";
 	}
 	

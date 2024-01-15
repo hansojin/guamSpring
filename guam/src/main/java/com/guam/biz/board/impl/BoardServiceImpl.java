@@ -12,30 +12,6 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
 	private BoardDAOMybatis boardDAO;
-
-	@Override
-	public void insertBoard(BoardVO vo) {
-		boardDAO.insertBoard(vo);
-	}
-
-	@Override
-	public void updateBoard(BoardVO vo) {
-		boardDAO.updateBoard(vo);
-	}
-
-
-
-	@Override
-	public BoardVO getBoard(BoardVO vo) {
-		return boardDAO.getBoard(vo);
-	}
-
-	@Override
-	public List<BoardVO> getBoardList(BoardVO vo) {
-		return boardDAO.getBoardList(vo);
-	}
-
-	///////////////// 위에는 이후 삭제 ///////////////////
 	
 	@Override
 	public void insertMboard(BoardVO vo) {

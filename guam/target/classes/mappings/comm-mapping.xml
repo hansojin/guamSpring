@@ -34,11 +34,17 @@
     	WHERE SEQ = #{seq}
 	</update>
 
+	<select id="commentList" resultType="commReply">
+		SELECT * 
+		FROM COMMREPLY
+		WHERE SEQ = #{seq}
+		ORDER BY IDX DESC		
+	</select>
 
 	<insert id="addComment" parameterType="commReply">
 		<![CDATA[
- 			INSERT INTO COMMREPLY(COMMSEQ, WRITERID, CONTENT) 
- 			VALUES(#{commseq}, #{writerid} , #{content}) 
+ 			INSERT INTO COMMREPLY(SEQ, WRITERID, CONTENT) 
+ 			VALUES(#{seq}, #{writerid} , #{content}) 
  		]]> 
 	</insert>
 	
@@ -48,8 +54,36 @@
     	WHERE SEQ = #{seq}
 	</update>
 
-	
+	<update id="minCommentCnt" parameterType="comm">
+    	UPDATE COMM
+    	SET REPLY = REPLY - 1
+    	WHERE SEQ = #{seq}
+	</update>
 
+	<delete id="deleteComment">
+	<![CDATA[
+		DELETE FROM COMMREPLY WHERE IDX=#{idx}
+	]]>
+	</delete>
 	
+	<delete id="deletePost">
+	<![CDATA[
+		DELETE FROM COMM WHERE SEQ=#{seq}
+	]]>
+	</delete>
+	
+	<select id="toEdit" resultType="comm">
+		SELECT * 
+		FROM COMM
+		WHERE SEQ=#{seq}	
+	</select>
+	
+	<update id="editPost" >
+		<![CDATA[
+			UPDATE COMM 
+			SET TITLE=#{title}, CONTENT=#{content} 
+			WHERE SEQ=#{seq}
+		]]>
+	</update>
 	
 </mapper>

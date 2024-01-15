@@ -37,7 +37,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="getSboardList.do">신청</a></li>
 					<li class="nav-item">
-						<a class="nav-link" href="/Study">스터디</a>
+						<a class="nav-link" href="studyList.do">스터디</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="communityList.do">커뮤니티</a>

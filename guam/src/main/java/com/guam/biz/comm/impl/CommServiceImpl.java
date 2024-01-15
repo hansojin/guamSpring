@@ -30,6 +30,11 @@ public class CommServiceImpl implements CommService {
 		return commDAO.communityPost(vo);
 	}
 	
+	@Override
+	public List<CommReplyVO> communityPostComment(CommReplyVO vo){
+		return commDAO.commentList(vo);
+	}
+	
 	
 	@Override
 	public void addComment(CommReplyVO vo) {
@@ -41,7 +46,26 @@ public class CommServiceImpl implements CommService {
 		commDAO.addCommentCnt(seq);
 	}
 
-
+	@Override
+	public void deleteComment(int idx,int seq) {
+		commDAO.deleteComment(idx);
+		commDAO.minCommentCnt(seq);
+	}
+	
+	@Override
+	public void deletePost(CommVO vo) {
+		commDAO.deletePost(vo);
+	}
+	
+	@Override
+	public CommVO toEdit(CommVO vo) {
+		return commDAO.toEdit(vo);
+	}
+	
+	@Override
+	public void editPost(CommVO vo) {
+		commDAO.editPost(vo);
+	}
 	
 	
 }
