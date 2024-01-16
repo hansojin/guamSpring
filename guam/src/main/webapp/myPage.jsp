@@ -90,24 +90,19 @@
         <div class='Track'>
             <p><span style="margin-right:10px; color:gray;">🔍</span>내가 작성한 GUAM 🔎</p>
             <hr style='width:70%; margin-left:-20px;'>
-<%--             <a href="myMList.do?writerid=${sessionScope.id}">내가 쓴 모집글 보러가기</a> --%>
-            <a href="communityList.do">📑 내가 모집한 GUAM 보러가기</a><br><br>
-            <a href="communityList.do">📑 내가 신청한 GUAM 보러가기</a><br><br>
+            <a href="myMList.do?writerid=${sessionScope.id}">📑 내가 모집한 GUAM 보러가기</a><br><br>
+            <a href="mySList.do?writerid=${sessionScope.id}">📑 내가 신청한 GUAM 보러가기</a><br><br>
             <hr style='width:70%; margin-left:-20px;'><br><br/>
-            
-            
-            
             <p><span style="margin-right:10px; color:gray;">🔍</span>내 GUAM 활동 🔎</p>
             <hr style='width:70%; margin-left:-20px;'>
             <p style='margin-left:20px'> 📍 스터디 </p>
-            <a href="communityList.do">📑 내가 작성한 스터디 보러가기</a><br><br>
+            <a href="myStudy.do?writerid=${sessionScope.id}">📑 내가 작성한 스터디 보러가기</a><br><br>
             <p style='margin-left:20px'> 📍 커뮤니티 </p>
-            <a href="communityList.do">📑 내가 작성한 커뮤니티 글 보러가기</a><br><br>
-            <a href="communityList.do" style='margin-left:60px;'>📑 내가 작성한 댓글이 포함된 글 보러가기</a><br><br>
+            <a href="myComm.do?writerid=${sessionScope.id}">📑 내가 작성한 커뮤니티 글 보러가기</a><br><br>
+            <a href="myComment.do?writerid=${sessionScope.id}" style='margin-left:60px;'>📑 내가 작성한 댓글이 포함된 글 보러가기</a><br><br>
             <hr style='width:70%; margin-left:-20px;'>
-	
 		</div>
-		<br><br><br><p style='text-align: center'>&copy; 2024 GUAM</p>
+		<br><p style='text-align: center'>&copy; 2024 GUAM</p>
 	</div>
 
 </body>

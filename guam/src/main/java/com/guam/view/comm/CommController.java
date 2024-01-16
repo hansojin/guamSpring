@@ -34,8 +34,8 @@ public class CommController {
 	@RequestMapping("/communityList.do")
 	public String communityList(CommVO vo, Model model) {
 		System.out.println("커뮤니티 글 목록 검색 처리");
-		model.addAttribute("commList", commService.communityList(vo));		// Model 정보 저장 
-	    return "community.jsp";												// View 이름 리턴					
+		model.addAttribute("commList", commService.communityList(vo));		
+	    return "community.jsp";																	
 	}
 	
 	// 글 상세 정보
@@ -96,5 +96,28 @@ public class CommController {
 		commService.editPost(vo);
 		return "redirect:/communityPost.do?seq="+vo.getSeq();
 	}	
+	
+	// 내가 쓴 글
+	@RequestMapping("/myComm.do")
+	public String myComm(CommVO vo, Model model) {
+		System.out.println("내가 작성한 커뮤니티 글 목록 검색 처리");
+		List<CommVO> clist = commService.myComm(vo);
+		if (clist == null || clist.isEmpty())
+			return "noWritten.jsp";
+		model.addAttribute("commList", clist);		
+	    return "community.jsp";																
+	}
+	
+	// 내가 쓴 댓글의 글
+	@RequestMapping("/myComment.do")
+	public String myComment(CommVO vo, Model model) {
+		System.out.println("내가 작성한 댓글의 커뮤니티 글 목록 검색 처리");
+		List<CommVO> clist = commService.myComment(vo);
+		if (clist == null || clist.isEmpty())
+			return "noWritten.jsp";
+		model.addAttribute("commList", clist);		
+		return "community.jsp";																
+	}	
+	
 	
 }

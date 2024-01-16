@@ -86,4 +86,20 @@
 		]]>
 	</update>
 	
+	<select id="myComm" resultType="comm">
+		SELECT * 
+		FROM COMM
+		WHERE 1=1
+        AND WRITERID=#{writerid}
+		ORDER BY SEQ DESC		
+	</select>
+	
+	<select id="myComment" resultType="comm">
+		SELECT comm.*
+		FROM COMM
+		JOIN COMMREPLY ON COMM.SEQ = COMMREPLY.SEQ
+        WHERE COMMREPLY.WRITERID=#{writerid}
+		ORDER BY SEQ DESC		
+	</select>
+	
 </mapper>

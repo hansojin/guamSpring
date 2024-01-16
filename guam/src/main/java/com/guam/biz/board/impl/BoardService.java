@@ -23,5 +23,7 @@ public interface BoardService {
 	List<BoardVO> searchMboardList(String search);
 	List<BoardVO> searchSboardList(String search);
 	
-	
+	// 내가 쓴 글 조회
+	List<BoardVO> myMList(BoardVO vo);
+	List<BoardVO> mySList(BoardVO vo);
 }

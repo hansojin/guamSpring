@@ -76,4 +76,22 @@
     	ORDER BY SEQ DESC
 	</select>
 	
+	<select id="myMList" resultType="board">
+		SELECT *
+		FROM BOARD
+		WHERE WRITERID=#{writerid}
+		AND CATE="m"
+		ORDER BY SEQ DESC		
+	</select>
+	
+	<select id="mySList" resultType="board">
+		SELECT *
+		FROM BOARD
+		WHERE WRITERID=#{writerid}
+		AND CATE="s"
+		ORDER BY SEQ DESC		
+	</select>
+	
+	
+	
 </mapper>

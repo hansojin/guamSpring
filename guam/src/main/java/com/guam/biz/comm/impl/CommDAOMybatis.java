@@ -80,4 +80,15 @@ public class CommDAOMybatis {
 		System.out.println("===> Mybatis로 editPost() 기능 처리");
 		mybatis.update("CommDAO.editPost", vo);
 	}
+	
+	public List<CommVO> myComm(CommVO vo) {
+		System.out.println("===> Mybatis로 myComm() 기능 처리");
+		return mybatis.selectList("CommDAO.myComm", vo);	
+	}
+	
+	public List<CommVO> myComment(CommVO vo) {
+		System.out.println("===> Mybatis로 myComment() 기능 처리");
+		return mybatis.selectList("CommDAO.myComment", vo);	
+	}
+	
 }

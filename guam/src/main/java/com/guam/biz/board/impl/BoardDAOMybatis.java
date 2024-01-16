@@ -58,4 +58,15 @@ public class BoardDAOMybatis{
 	    paramSMap.put("search", search);
 	    return mybatis.selectList("BoardDAO.searchSboardList", paramSMap);
 	}
+	
+	
+	public List<BoardVO> myMList(BoardVO vo) {
+		System.out.println("===> Mybatis로 myMList() 기능 처리");
+		return mybatis.selectList("BoardDAO.myMList", vo);
+	}
+	
+	public List<BoardVO> mySList(BoardVO vo) {
+		System.out.println("===> Mybatis로 mySList() 기능 처리");
+		return mybatis.selectList("BoardDAO.mySList", vo);
+	}
 }

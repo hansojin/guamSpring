@@ -39,4 +39,27 @@
     	OR GOAL LIKE CONCAT ('%', #{search}, '%') )
     	ORDER BY SEQ DESC
 	</select>
+	
+	
+	<select id="myStudy" resultType="study">
+		SELECT * 
+		FROM STUDY
+    	WHERE WRITERID=#{writerid}
+		ORDER BY SEQ DESC		
+	</select>	
+	
+	<select id="toChat" resultType="chat">
+		SELECT * 
+		FROM CHAT
+		WHERE SEQ=#{seq}
+		ORDER BY IDX
+	</select>
+	
+	<insert id="chatInsert" parameterType="chat">
+		<![CDATA[
+			INSERT INTO CHAT(SEQ, WRITERID, CONTENT)
+			VALUES(#{seq}, #{writerid}, #{content})
+		]]>
+	</insert>
+	
 </mapper>

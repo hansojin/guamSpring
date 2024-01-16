@@ -67,5 +67,15 @@ public class CommServiceImpl implements CommService {
 		commDAO.editPost(vo);
 	}
 	
+	@Override
+	public List<CommVO> myComm(CommVO vo){
+		return commDAO.myComm(vo);
+	}
+	
+	@Override
+	public List<CommVO> myComment(CommVO vo){
+		return commDAO.myComment(vo);
+	}
+	
 	
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 
+import com.guam.biz.study.ChatVO;
 import com.guam.biz.study.StudyVO;
 import com.guam.biz.study.impl.StudyService;
 
@@ -28,8 +29,8 @@ public class StudyController {
 	@RequestMapping("/studyList.do")
 	public String studyList(StudyVO vo, Model model) {
 		System.out.println("스터디 글 목록 검색 처리");
-		model.addAttribute("studyList", studyService.studyList(vo));			// Model 정보 저장 
-		   return "study.jsp";												// View 이름 리턴					
+		model.addAttribute("studyList", studyService.studyList(vo));			
+		   return "study.jsp";																
 	}
 	
 	// 스터디 글 삭제
@@ -49,4 +50,27 @@ public class StudyController {
 		return "study.jsp?search"+search;	
 	}
 	
+	// 내가 작성한 스터디 글 목록 
+	@RequestMapping("/myStudy.do")
+	public String myStudy(StudyVO vo, Model model) {
+		System.out.println("내가 작성한 스터디 글 목록 검색 처리");
+		model.addAttribute("studyList", studyService.myStudy(vo));			
+		return "study.jsp";															
+	}
+	
+	// 채팅 목록 검색
+	@RequestMapping("/toChat.do")
+	public String toChat(ChatVO vo, Model model) {
+		System.out.println("채팅 목록 검색 처리");
+		model.addAttribute("chatList", studyService.toChat(vo));			
+		return "chat.jsp";																
+	}
+	
+	// 채팅 입력 
+	@RequestMapping("/chatInsert.do")
+	public String chatInsert(ChatVO vo) {
+		System.out.println("채팅 입력 처리");
+		studyService.chatInsert(vo);
+		return "redirect:/toChat.do?seq="+vo.getSeq();
+	}
 }

@@ -78,6 +78,10 @@
             <h4>📢 ${slist.title}</h4>
 			<p style="margin-left:25px">➤<b>&nbsp;목&nbsp;표&nbsp;</b><br>${slist.goal}</p>
             <p style="margin-left:25px">➤<b>&nbsp;내&nbsp;용&nbsp;</b><br>${slist.content}</p>
+            <button onclick="redirectTo('toChat.do?seq='+${slist.seq})" style="	width: 100px; height:30px;
+				color: #26469B; border: 1px solid #26469B; background-color : white; border-radius: 4px;
+				fontSize: 10px; cursor: pointer; margin-left: 850px;">참여하기</button>
+            
             <c:if test="${slist.writerid eq sessionScope.id}">
         		<form action="deleteStudyPost.do?seq=${slist.seq}" method="post" >
         			<input type="submit" value="삭제하기" id="formBtn" style="border:none; width: 70px; height: 25px;

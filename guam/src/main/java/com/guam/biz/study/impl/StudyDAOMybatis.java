@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.guam.biz.comm.CommVO;
+import com.guam.biz.study.ChatVO;
 import com.guam.biz.study.StudyVO;
 
 @Repository
@@ -39,4 +40,20 @@ public class StudyDAOMybatis {
 		paramMap.put("search", search);
 		return mybatis.selectList("StudyDAO.searchStudyList", paramMap);	
 	}
+	
+	public List<StudyVO> myStudy(StudyVO vo) {
+		System.out.println("===> Mybatis로 myStudy() 기능 처리");
+		return mybatis.selectList("StudyDAO.myStudy", vo);	
+	}
+	
+	public List<ChatVO> toChat(ChatVO vo) {
+		System.out.println("===> Mybatis로 toChat() 기능 처리");
+		return mybatis.selectList("StudyDAO.toChat", vo);	
+	}
+	
+	public void chatInsert(ChatVO vo) {
+		System.out.println("===> Mybatis로 chatInsert() 기능 처리");
+		mybatis.insert("StudyDAO.chatInsert", vo);
+	}
+	
 }

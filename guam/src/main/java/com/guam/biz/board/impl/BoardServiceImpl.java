@@ -53,4 +53,15 @@ public class BoardServiceImpl implements BoardService{
 		return boardDAO.searchSboardList(search);
 	}
 	
+	@Override
+	public List<BoardVO> myMList(BoardVO vo) {
+		return boardDAO.myMList(vo);
+	}
+	
+	@Override
+	public List<BoardVO> mySList(BoardVO vo) {
+		return boardDAO.mySList(vo);
+	}
+	
+	
 }

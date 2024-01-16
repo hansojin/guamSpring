@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.guam.biz.study.ChatVO;
 import com.guam.biz.study.StudyVO;
 
 
@@ -33,4 +34,20 @@ public class StudyServiceImpl implements StudyService {
 	public List<StudyVO> searchStudyList(String search){
 		return studyDAO.searchStudyList(search);
 	}
+	
+	@Override
+	public List<StudyVO> myStudy(StudyVO vo){
+		return studyDAO.myStudy(vo);
+	}
+	
+	@Override
+	public List<ChatVO> toChat(ChatVO vo){
+		return studyDAO.toChat(vo);
+	}
+	
+	@Override
+	public void chatInsert(ChatVO vo) {
+		studyDAO.chatInsert(vo);
+	}
+	
 }

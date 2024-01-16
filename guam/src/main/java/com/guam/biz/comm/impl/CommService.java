@@ -33,4 +33,9 @@ public interface CommService {
 	
 	// 글 수정 처리
 	void editPost(CommVO vo);
+	
+	// 내가 쓴 커뮤니티 글 목록 조회
+	List<CommVO> myComm(CommVO vo);
+	List<CommVO> myComment(CommVO vo);
+	
 }
