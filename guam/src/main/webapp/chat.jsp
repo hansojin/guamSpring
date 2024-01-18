@@ -26,7 +26,7 @@
 			<h4>CHAT</h4>
 			<hr style="width:74%">
 		</div>
-		<div id='chat'>
+		<div id='chat' style='max-height: 480px; overflow-y: auto;'>
 			<c:forEach items="${chatList}" var="chat">
 				<c:choose>
     			<c:when test="${chat.writerid eq sessionScope.id}">

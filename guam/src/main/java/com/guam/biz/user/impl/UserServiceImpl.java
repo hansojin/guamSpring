@@ -29,7 +29,6 @@ public class UserServiceImpl implements UserService{
 	public void memberCount(UserVO vo) {
 		int num = userDAO.memberCount(vo);
 		System.out.println("회원수 " + num);
-		
 	}
 	
 	@Override
