@@ -75,7 +75,9 @@ GUAM의 커뮤니티 섹션은 자유로운 대화와 지식 교환의 공간입
 ![ERdiagram](https://github.com/hansojin/guamSpring/assets/112622663/869083fc-b026-48d8-b621-8d9f0885bc08)
 
 ## 실행 화면
-    https://doing7.tistory.com/38
+
+![comp](https://github.com/hansojin/guamSpring/assets/112622663/268eac7d-474b-45ff-8f94-f0c1baf26034)
+
 
 
 
