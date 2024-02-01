@@ -59,13 +59,13 @@ GUAM의 커뮤니티 섹션은 자유로운 대화와 지식 교환의 공간입
 ![mvc](https://github.com/hansojin/guamSpring/assets/112622663/a4529592-5263-4c21-a279-a595fba0c166)
 
 - **Controller**: 클라이언트의 HTTP 요청을 처리하고 비즈니스 로직을 호출
-- **DTO (Data Transfer Object)**: 데이터 전송을 위한 객체로, Controller와 Service 간에 데이터를 주고 받을 때 사용
 - **Service**: 비즈니스 로직이 구현되는 곳으로, Controller에서 요청을 받아 DAO를 통해 데이터를 처리하고 결과를 반환
+- **VO(Value Ojbect)**: 데이터 전송을 위한 객체로, Controller와 Service 간에 데이터를 주고 받을 때 사용
 - **DAO (Data Access Object)**: 데이터베이스와의 상호 작용을 담당
 - **DB (Database)**: 실제 데이터가 저장되는 데이터베이스
 
     1. 클라이언트는 HTTP 요청을 Controller로 보냄
-    2. Controller는 DTO를 생성하고 필요한 비즈니스 로직을 호출
+    2. Controller는 VO를 생성하고 필요한 비즈니스 로직을 호출
     3. Service에서 DAO를 통해 데이터를 읽고 쓰고, 그 결과를 Controller로 반환
     4. Controller는 결과를 클라이언트에게 응답으로 보냄
 
